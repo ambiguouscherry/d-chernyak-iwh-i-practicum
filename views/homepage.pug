@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    header
+      h1= title
+    main
+      if data.length
+        .cards
+          each row in data
+            - const props = row.properties || {};
+            .card
+              h2= props.artist_name || 'Unknown Artist'
+              p
+                strong Genre:
+                |  #{props.genre || 'N/A'}
+              p
+                strong Favorite song:
+                |  #{props.favorite_song || 'N/A'}
+      else
+        p No custom object records found.
