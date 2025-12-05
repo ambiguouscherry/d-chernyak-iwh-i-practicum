@@ -1,0 +1,16 @@
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    header
+      h1= title
+    main
+      form(action='/update-cobj', method='POST')
+        label(for='artist_name') Artist Name:
+        input#artist_name(type='text', name='artist_name', required)
+        label(for='genre') Genre:
+        input#genre(type='text', name='genre', required)
+        label(for='favorite_song') Favorite Song:
+        input#favorite_song(type='text', name='favorite_song', required)
+        button(type='submit') Submit
